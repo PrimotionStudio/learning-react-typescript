@@ -1,0 +1,26 @@
+.taskInput {
+	padding: 0.5rem;
+	font-size: large;
+	border: none;
+	background-color: #fff;
+	border-radius: 1rem;
+	border-bottom-right-radius: 0;
+	border-top-right-radius: 0;
+	margin: 0 1rem;
+}
+.taskInputDiv {
+	display: flex;
+	justify-content: center;
+	margin: 2rem 0;
+}
+.saveButton {
+	background-color: #fff;
+	padding: 1rem;
+	border: none;
+	border-radius: 1rem;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 0;
+}
+.saveButton:focus {
+	border: 2px solid black;
+}

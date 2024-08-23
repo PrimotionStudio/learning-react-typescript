@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: aqua;
+}
+.App h1 {
+	background-color: antiquewhite;
+	margin: 1rem;
+	padding: 1rem;
+	border-radius: 1rem;
+	text-align: center;
+	box-shadow: 5px 5px 5px;
+}
