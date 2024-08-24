@@ -1,7 +1,7 @@
 import React from 'react'
 import Todo from '../Model'
-import './TodoList.css'
-import { MdEdit, MdDone, MdDelete } from "react-icons/md";
+import TodoSingle from './TodoSingle';
+import './TodoList.css';
 
 interface Props {
     todos: Todo[];
@@ -13,18 +13,7 @@ const TodoList: React.FC<Props> = ({ todos, setTodos }) => {
         <div className='todoList'>
             {
                 todos.map((todo) => (
-                    <div className='card' >
-                        <ul>
-                            <li>id: {todo.id}</li>
-                            <li>task: {todo.task}</li>
-                            <li>isDone: {(todo.isDone) ? 'Done' : 'Not Done'}</li>
-                        </ul>
-                        <span>
-                            <MdEdit className='icon' />
-                            <MdDelete className='icon' />
-                            <MdDone className='icon' />
-                        </span>
-                    </div>
+                    <TodoSingle todo={todo} todos={todos} setTodos={setTodos} />
                 ))
             }
         </div>

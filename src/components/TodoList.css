@@ -1,17 +1,5 @@
-.card {
-	padding: 1rem;
-	background-color: yellow;
-	margin: 2rem;
-	justify-content: space-between;
+.todoList {
 	display: flex;
-}
-.card ul {
-	list-style: none;
-}
-.card ul li {
-	text-align: justify;
-}
-.card span .icon {
-	font-size: large;
-	margin-left: 0.5rem;
+	flex-direction: column;
+	align-items: center;
 }

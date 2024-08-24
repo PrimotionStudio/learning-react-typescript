@@ -1,6 +1,5 @@
 import React from 'react';
 import './InputField.css';
-import Todo from '../Model';
 
 interface Props {
   todo: string;

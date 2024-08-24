@@ -9,6 +9,11 @@
 	border-top-right-radius: 0;
 	margin: 0 1rem;
 }
+@media screen and (max-width: 700px) {
+	.taskInput {
+		width: 70%;
+	}
+}
 @media screen and (max-width: 400px) {
 	.taskInput {
 		width: 90%;
