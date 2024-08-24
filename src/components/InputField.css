@@ -2,11 +2,17 @@
 	padding: 0.5rem;
 	font-size: large;
 	border: none;
+	width: 50%;
 	background-color: #fff;
 	border-radius: 1rem;
 	border-bottom-right-radius: 0;
 	border-top-right-radius: 0;
 	margin: 0 1rem;
+}
+@media screen and (max-width: 400px) {
+	.taskInput {
+		width: 90%;
+	}
 }
 .taskInputDiv {
 	display: flex;
