@@ -19,42 +19,43 @@ const TodoSingle: React.FC<Props> = ({ todo, todos, setTodos }) => {
             (todo) => todo.id === id ? { ...todo, isDone: !todo.isDone } : todo)
         )
     };
-    const handleEdit = (id: number) => { };
+    const handleEdit = (e: React.FormEvent<HTMLFormElement>, id: number) => {
+        e.preventDefault();
+        setTodos(todos.map((todo) =>
+            (todo.id === id ? { ...todo, task: editValue } : todo)
+        ));
+        setEditState(false);
+    };
     const handleDelete = (id: number) => {
         setTodos(todos.filter((todo) => todo.id !== id || todo.isDone === false));
         console.log('Cannot delete a task that has not been done');
     };
     return (
-        <form className='card' >
+        <form className='card' onSubmit={(e: React.FormEvent<HTMLFormElement>) => handleEdit(e, todo.id)} >
             <ul>
                 {
-                    (editState === true) ? (
-                        <input
-                            type="text"
-                            onChange={(e) => (setTodos(todos.map((_todo) => {
-                                if (_todo.id !== todo.id) return _todo;
-                                else {
-                                    _todo.task = e.target.value;
-                                    return _todo;
+                    (editState === true) ?
+                        (
+                            <input
+                                type="text"
+                                onChange={(e) => setEditValue(e.target.value)}
+                                value={editValue}
+                            />
+                        ) : (
+                            // <li>id: {todo.id}</li>
+                            <li>
+                                {
+                                    todo.isDone ? (<del>{todo.task}</del>) : (<>{todo.task}</>)
                                 }
-                            })))}
-                            value={todo.task}
-                        />
-                    ) : (
-                        // <li>id: {todo.id}</li>
-                        <li>
-                            {
-                                todo.isDone ? (<del>{todo.task}</del>) : (<>{todo.task}</>)
-                            }
-                        </li>
-                        // <li>isDone: {(todo.isDone) ? 'Done' : 'Not Done'}</li>
-                    )
+                            </li>
+                            // <li>isDone: {(todo.isDone) ? 'Done' : 'Not Done'}</li>
+                        )
                 }
             </ul>
             <span>
                 <span className="icon" onClick={
                     () => {
-                        if (!editState && !todo.isDone) { setEditState(!editState) };
+                        if (!todo.isDone) { setEditState(!editState) };
                     }
                 }>
                     <MdEdit />
